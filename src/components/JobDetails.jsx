@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import styles from './JobDetails.css';
+import { useNavigate } from 'react-router-dom';
 
 const JobDetails = () => {
     const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const JobDetails = () => {
         roleAndResponsibility: '',
         joiningDate: ''
     });
+
+    const navigate = useNavigate();
 
     const [saveData, setSaveData] = useState([]);
     const inputRef = useRef();
@@ -41,7 +44,11 @@ const JobDetails = () => {
             roleAndResponsibility: '',
             joiningDate: ''
         })
-    }
+    };
+
+    const handleClick = () => {
+        navigate('/');
+    };
 
 
 
@@ -95,7 +102,10 @@ const JobDetails = () => {
 
     return (
         <div>
-            <h1>Job Details</h1>
+            <div className='Topbar'>
+                <h1>Job Details</h1>
+                <button onClick={handleClick}>Go to Home</button>
+            </div>
             <div style={containerStyle}>
                 <div style={inputCard}>
                     <form onSubmit={handleSubmit} >

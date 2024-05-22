@@ -52,6 +52,13 @@ details {
     max-width: 1000px;
 }
 
+.Topbar {
+    display: flex;
+    justify-content: center;
+}
+
+
+
 .list {
     display: flex;
     justify-content: center;
